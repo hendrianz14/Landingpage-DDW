@@ -150,7 +150,7 @@ header.hero::after {
     background: rgba(24,24,24,0.95);
     box-shadow: 0 12px 35px rgba(0,0,0,0.45);
     backdrop-filter: blur(12px);
-    z-index: 100;
+    z-index: 1200;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .logo {
@@ -181,6 +181,8 @@ header.hero::after {
     gap: 2rem;
     margin: 0;
     padding: 0;
+    position: relative;
+    z-index: 1250;
 }
 .nav-links a {
     color: #fff;
@@ -310,21 +312,13 @@ section {
     scroll-padding-inline: 5vw;
     scroll-padding-left: 5vw;
     scroll-padding-right: 5vw;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(224,185,115,0.45) transparent;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .menu-list::-webkit-scrollbar {
-    height: 8px;
-}
+    display: none;
 
-.menu-list::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.menu-list::-webkit-scrollbar-thumb {
-    background: rgba(224,185,115,0.45);
-    border-radius: 999px;
 }
 .menu-item {
     background: #232323;
@@ -334,12 +328,8 @@ section {
     text-align: center;
     width: clamp(260px, 75vw, 320px);
     scroll-snap-align: start;
-    transition: transform 0.2s, box-shadow 0.2s;
 }
-.menu-item:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(224,185,115,0.15);
-}
+
 .menu-item img {
     width: 100%;
     height: 160px;
@@ -616,7 +606,9 @@ footer {
 
 @media (max-width: 768px) {
     :root {
-        --nav-height: 84px;
+
+        --nav-height: 72px;
+
     }
     header.hero {
         min-height: auto;
@@ -624,7 +616,8 @@ footer {
     }
     .navbar {
         flex-wrap: wrap;
-        padding: 0.85rem 5vw;
+        gap: 0.75rem;
+        padding: 0.65rem 5vw;
     }
     .logo {
         gap: 0;
@@ -634,7 +627,7 @@ footer {
     }
     .logo-image {
         display: block;
-        width: 120px;
+        width: 100px;
     }
     .nav-toggle {
         display: flex;
@@ -655,7 +648,9 @@ footer {
         pointer-events: none;
         transform: translateY(-10px);
         transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 1300;
     }
+
     .nav-links.open {
         opacity: 1;
         pointer-events: auto;
@@ -689,9 +684,14 @@ footer {
     .gallery-card img {
         max-height: 220px;
     }
+
 }
 
 @media (max-width: 600px) {
+    :root {
+        --nav-height: 66px;
+    }
+
     .container {
         width: 92vw;
     }
@@ -718,16 +718,18 @@ footer {
 
 }
 
+
 @media (max-width: 480px) {
     :root {
-        --nav-height: 78px;
+        --nav-height: 60px;
     }
     .navbar {
-        gap: 1rem;
-        padding: 0.75rem 5vw;
+        gap: 0.65rem;
+        padding: 0.5rem 5vw;
     }
     .logo-image {
-        width: 96px;
+        width: 80px;
+
     }
     .hero-content {
         padding: 3rem 0 2.5rem;
