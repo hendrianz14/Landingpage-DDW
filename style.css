@@ -101,6 +101,7 @@ body {
     color: #fff;
     line-height: 1.6;
     overflow-x: hidden;
+    isolation: isolate;
 }
 
 [id] {
@@ -150,7 +151,7 @@ header.hero::after {
     background: rgba(24,24,24,0.95);
     box-shadow: 0 12px 35px rgba(0,0,0,0.45);
     backdrop-filter: blur(12px);
-    z-index: 1200;
+    z-index: 9999;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .logo {
@@ -346,6 +347,7 @@ section {
     font-size: 1rem;
     color: #fffbe6;
 }
+
 /* Reservasi form */
 .reservation form {
     display: flex;
