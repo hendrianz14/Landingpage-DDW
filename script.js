@@ -138,6 +138,16 @@ function setupPackageCards(packageCards) {
     if (!Array.isArray(packageCards) || packageCards.length === 0) {
         return;
     }
+    document.addEventListener('click', function (e) {
+    // Cek apakah klik terjadi DI DALAM salah satu .package-card
+    const clickedInsideCard = e.target.closest('.package-card');
+    if (!clickedInsideCard) {
+        // Kalau klik di luar semua card → hapus semua .selected
+        document.querySelectorAll('.package-card.selected').forEach(card => {
+            card.classList.remove('selected');
+        });
+    }
+});
 
     /**
      * Nama Fungsi: markSelectedCard
@@ -155,10 +165,19 @@ function setupPackageCards(packageCards) {
      * Keterangan: Memberi highlight pada kartu paket yang baru dipilih.
      */
     function handlePackageCardClick(event) {
-        const currentCard = event.currentTarget;
-        markSelectedCard(currentCard);
-    }
+    const currentCard = event.currentTarget;
 
+    const isAlreadySelected = currentCard.classList.contains('selected');
+
+    if (isAlreadySelected) {
+        currentCard.classList.remove('selected');
+    } else {
+        for (const card of packageCards) {
+            card.classList.remove('selected');
+        }
+        currentCard.classList.add('selected');
+    }
+}
     /**
      * Nama Fungsi: handlePackageWhatsapp
      * Keterangan: Mengirimkan pesan WhatsApp terkait paket tertentu tanpa kehilangan fungsi pemilihan kartu.
@@ -186,10 +205,11 @@ function setupPackageCards(packageCards) {
     }
 
     for (const card of packageCards) {
-        card.addEventListener('click', handlePackageCardClick);
-        const waBtn = card.querySelector('.wa-action');
-        if (waBtn) {
-            waBtn.addEventListener('click', handlePackageWhatsapp);
-        }
+    card.addEventListener('click', handlePackageCardClick);
+
+    const waBtn = card.querySelector('.wa-action');
+    if (waBtn) {
+        waBtn.addEventListener('click', handlePackageWhatsapp);
     }
+}
 }
