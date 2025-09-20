@@ -10,11 +10,17 @@
 </head>
 <body>
     <header class="hero">
-        <nav>
+        <nav class="navbar" aria-label="Navigasi utama">
             <div class="logo">Le Luxe</div>
-            <ul>
+            <button class="nav-toggle" aria-label="Buka navigasi" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
                 <li><a href="#about">Tentang</a></li>
                 <li><a href="#menu">Menu</a></li>
+                <!-- <li><a href="#gallery">Galeri</a></li> -->
                 <li><a href="#reservation">Reservasi</a></li>
             </ul>
         </nav>
@@ -69,6 +75,33 @@
             </div>
         </div>
     </section>
+
+    <!--
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Galeri Suasana</h2>
+            <p class="gallery-subtitle">Jelajahi atmosfer elegan Le Luxe melalui beberapa potret interior dan hidangan unggulan kami.</p>
+            <div class="gallery-grid">
+                <figure class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80" alt="Interior restoran mewah" loading="lazy">
+                    <figcaption>Interior yang hangat dengan pencahayaan dramatis.</figcaption>
+                </figure>
+                <figure class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=1200&q=80" alt="Chef sedang menata hidangan" loading="lazy">
+                    <figcaption>Kreasi chef berkelas dunia yang penuh seni.</figcaption>
+                </figure>
+                <figure class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=1200&q=80" alt="Hidangan penutup elegan" loading="lazy">
+                    <figcaption>Pencuci mulut eksklusif dengan sentuhan modern.</figcaption>
+                </figure>
+                <figure class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1200&q=80" alt="Meja makan dengan dekorasi bunga" loading="lazy">
+                    <figcaption>Pengaturan meja intim untuk momen spesial.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    -->
 
     <section id="menu-lengkap" class="menu-lengkap">
         <div class="container">
@@ -150,7 +183,21 @@
             <form>
                 <input type="text" name="name" placeholder="Nama" required>
                 <input type="date" name="date" required>
-                <input type="time" name="time" required step="60" min="09:00" max="20:00">
+                <select name="time" required>
+                    <option value="" disabled selected>Pilih Jam</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
+                </select>
                 <button type="submit" class="btn-primary">Reservasi via WhatsApp</button>
             </form>
             <div class="package-section">
@@ -176,8 +223,16 @@
         </div>
     </section>
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Le Luxe Restaurant. All rights reserved.</p>
+        <div class="container footer-content">
+            <div class="footer-social">
+                <h4>Social Media Kami</h4>
+                <ul class="footer-social-list">
+                    <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                </ul>
+            </div>
+            <p class="footer-copy">&copy; 2025 Le Luxe Restaurant. All rights reserved.</p>
         </div>
     </footer>
 </body>
