@@ -7,9 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (reservationForm) {
         reservationForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const name = reservationForm.querySelector('input[name="name"]').value;
-            const date = reservationForm.querySelector('input[name="date"]').value;
-            const time = reservationForm.querySelector('input[name="time"]').value;
+            const nameField = reservationForm.querySelector('input[name="name"]');
+            const dateField = reservationForm.querySelector('input[name="date"]');
+            const timeField = reservationForm.querySelector('[name="time"]');
+            const name = nameField ? nameField.value : '';
+            const date = dateField ? dateField.value : '';
+            const time = timeField ? timeField.value : '';
             const packageSelected = document.querySelector('.package-card.selected .package-title')?.textContent || '';
             let message = `Halo, saya ingin reservasi atas nama ${name} pada tanggal ${date} jam ${time}`;
             if (packageSelected) message += ` untuk paket ${packageSelected}`;
@@ -32,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.stopPropagation();
                 const name = document.querySelector('input[name="name"]')?.value || '';
                 const date = document.querySelector('input[name="date"]')?.value || '';
-                const time = document.querySelector('input[name="time"]')?.value || '';
+                const time = document.querySelector('[name="time"]')?.value || '';
                 const pkg = card.querySelector('.package-title').textContent;
                 let message = `Halo, saya tertarik dengan paket ${pkg}`;
                 if (name && date && time) {

@@ -218,16 +218,21 @@ section {
     max-width: 400px;
     margin: 0 auto 2.5rem auto;
 }
-.reservation input, .reservation button {
+.reservation input, .reservation select, .reservation button {
     padding: 1rem;
     border-radius: 8px;
     border: none;
     font-size: 1rem;
 }
-.reservation input {
+.reservation input, .reservation select {
     background: #232323;
     color: #fff;
     border: 1px solid #e0b973;
+}
+.reservation select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 /* Paket Section */
 .package-section {
