@@ -136,6 +136,7 @@ header.hero::after {
     gap: 1.5rem;
     position: relative;
     z-index: 10;
+    
 }
 .logo {
     font-family: 'Playfair Display', serif;
