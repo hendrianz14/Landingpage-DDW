@@ -2,6 +2,43 @@
 // WhatsApp reservation & interactive package cards
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Responsive navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', function() {
+            const isOpen = navLinks.classList.toggle('open');
+            navToggle.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (navLinks.classList.contains('open')) {
+                    navLinks.classList.remove('open');
+                    navToggle.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!navLinks.contains(event.target) && !navToggle.contains(event.target) && navLinks.classList.contains('open')) {
+                navLinks.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && navLinks.classList.contains('open')) {
+                navLinks.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
     // Reservation form submit
     const reservationForm = document.querySelector('.reservation form');
     if (reservationForm) {
@@ -9,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const name = reservationForm.querySelector('input[name="name"]').value;
             const date = reservationForm.querySelector('input[name="date"]').value;
-            const time = reservationForm.querySelector('input[name="time"]').value;
+            const timeField = reservationForm.querySelector('[name="time"]');
+            const time = timeField && timeField.value !== '' ? timeField.value : '';
             const packageSelected = document.querySelector('.package-card.selected .package-title')?.textContent || '';
             let message = `Halo, saya ingin reservasi atas nama ${name} pada tanggal ${date} jam ${time}`;
             if (packageSelected) message += ` untuk paket ${packageSelected}`;
@@ -32,7 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.stopPropagation();
                 const name = document.querySelector('input[name="name"]')?.value || '';
                 const date = document.querySelector('input[name="date"]')?.value || '';
-                const time = document.querySelector('input[name="time"]')?.value || '';
+                const timeField = document.querySelector('[name="time"]');
+                const time = timeField && timeField.value !== '' ? timeField.value : '';
                 const pkg = card.querySelector('.package-title').textContent;
                 let message = `Halo, saya tertarik dengan paket ${pkg}`;
                 if (name && date && time) {
