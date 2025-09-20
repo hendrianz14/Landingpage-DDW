@@ -10,9 +10,14 @@
 </head>
 <body>
     <header class="hero">
-        <nav>
+        <nav class="navbar">
             <div class="logo">Le Luxe</div>
-            <ul>
+            <button class="nav-toggle" type="button" aria-label="Buka navigasi" aria-controls="primary-navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="primary-navigation" aria-hidden="false">
                 <li><a href="#about">Tentang</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#reservation">Reservasi</a></li>
@@ -147,12 +152,28 @@
     <section id="reservation" class="reservation">
         <div class="container">
             <h2>Reservasi</h2>
-            <form>
-                <input type="text" name="name" placeholder="Nama" required>
-                <input type="date" name="date" required>
-                <input type="time" name="time" required step="60" min="09:00" max="20:00">
-                <button type="submit" class="btn-primary">Reservasi via WhatsApp</button>
-            </form>
+            <div class="reservation-card">
+                <form>
+                    <input type="text" name="name" placeholder="Nama" required>
+                    <input type="date" name="date" required>
+                    <select name="time" required>
+                        <option value="" disabled selected>Pilih Jam</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                        <option value="20:00">20:00</option>
+                    </select>
+                    <button type="submit" class="btn-primary">Reservasi via WhatsApp</button>
+                </form>
+            </div>
             <div class="package-section">
                 <h3 style="text-align:center;color:#e0b973;margin:2.5rem 0 1.5rem 0;font-family:'Playfair Display',serif;">Pilih Jenis Paket</h3>
                 <div class="package-list">
