@@ -102,12 +102,18 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     isolation: isolate;
+    padding-top: var(--nav-height);
 }
 
 [id] {
     scroll-margin-top: calc(var(--nav-height) + 24px);
 }
-
+.package-card,
+.footer-social,
+.reservation {
+  position: relative;
+  z-index: 1;
+}
 header.hero {
     position: relative;
     isolation: isolate;
