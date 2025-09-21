@@ -144,6 +144,8 @@ function initializeReservationDateInput(reservationForm) {
         return;
     }
 
+    const supportsProgrammaticPicker = typeof dateField.showPicker === 'function';
+
     const refreshState = () => {
         const hasValue = Boolean(dateField.value);
         dateWrapper.classList.toggle('has-value', hasValue);
@@ -160,13 +162,15 @@ function initializeReservationDateInput(reservationForm) {
     };
 
     const openNativePicker = () => {
-        if (typeof dateField.showPicker === 'function') {
-            try {
-                dateField.showPicker();
-            } catch (error) {
-                // showPicker dapat menolak ketika dipanggil saat picker sudah terbuka;
-                // kita abaikan agar pengalaman pengguna tidak terganggu.
-            }
+        if (!supportsProgrammaticPicker) {
+            return;
+        }
+
+        try {
+            dateField.showPicker();
+        } catch (error) {
+            // showPicker dapat menolak ketika dipanggil saat picker sudah terbuka;
+            // kita abaikan agar pengalaman pengguna tidak terganggu.
         }
     };
 
@@ -175,8 +179,17 @@ function initializeReservationDateInput(reservationForm) {
             return;
         }
 
+        if (event.target === dateField) {
+            return;
+        }
+
         focusDateField();
-        openNativePicker();
+
+        if (supportsProgrammaticPicker) {
+            openNativePicker();
+        } else if (typeof dateField.click === 'function') {
+            dateField.click();
+        }
     };
 
     dateWrapper.addEventListener('click', handleWrapperClick);
