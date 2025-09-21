@@ -3,37 +3,37 @@
     {
       "title": "Gurame Asam Manis",
       "description": "Ikan gurame segar dengan saus asam manis khas Djoglo Djawi Wangon.",
-      "image": "assets/grameasammanis.png",
+      "image": "assets/grameasammanis.jpg",
       "alt": "Gurame asam manis dengan saus merah menggugah selera"
     },
     {
       "title": "Sop Kaki Kambing Kuah Susu",
       "description": "Sop kaki kambing dengan kuah susu gurih dan rempah pilihan.",
-      "image": "assets/sopkakikambingkuahsusu.png",
+      "image": "assets/sopkakikambingkuahsusu.jpg",
       "alt": "Semangkuk sop kaki kambing kuah susu hangat"
     },
     {
       "title": "Ayam Goreng Kampung",
       "description": "Ayam kampung goreng renyah ditemani sambal trasi spesial rumah makan.",
-      "image": "assets/ayamkampunggoreng.png",
+      "image": "assets/ayamkampunggoreng.jpg",
       "alt": "Ayam goreng kampung dengan sambal tradisional"
     },
     {
       "title": "Strawberry Frost",
       "description": "Minuman stroberi dingin dengan tekstur creamy dan aroma menyegarkan.",
-      "image": "assets/strawberryfrost.png",
+      "image": "assets/strawberryfrost.jpg",
       "alt": "Minuman Strawberry Frost berwarna merah muda dengan es batu"
     },
     {
       "title": "Strawberry Squash",
       "description": "Kombinasi soda dan stroberi segar yang manis sekaligus menyegarkan.",
-      "image": "assets/strawberrysquash.png",
+      "image": "assets/strawberrysquash.jpg",
       "alt": "Gelas berisi Strawberry Squash dengan potongan buah dan daun mint"
     },
     {
       "title": "Lychee Yakult",
       "description": "Perpaduan Yakult dan buah leci yang lembut, cocok dinikmati saat santai.",
-      "image": "assets/lycheyakult.png",
+      "image": "assets/lycheyakult.jpg",
       "alt": "Minuman Lychee Yakult dalam gelas tinggi dengan es batu"
     }
   ],
