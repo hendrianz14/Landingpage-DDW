@@ -388,6 +388,11 @@ section {
 .reservation .input-wrapper {
     position: relative;
     width: 100%;
+    cursor: pointer;
+}
+
+.reservation .input-wrapper:focus-within {
+    cursor: text;
 }
 
 .date-input input[type="date"] {

@@ -149,6 +149,37 @@ function initializeReservationDateInput(reservationForm) {
         dateWrapper.classList.toggle('has-value', hasValue);
     };
 
+    const focusDateField = () => {
+        if (typeof dateField.focus === 'function') {
+            try {
+                dateField.focus({ preventScroll: true });
+            } catch (error) {
+                dateField.focus();
+            }
+        }
+    };
+
+    const openNativePicker = () => {
+        if (typeof dateField.showPicker === 'function') {
+            try {
+                dateField.showPicker();
+            } catch (error) {
+                // showPicker dapat menolak ketika dipanggil saat picker sudah terbuka;
+                // kita abaikan agar pengalaman pengguna tidak terganggu.
+            }
+        }
+    };
+
+    const handleWrapperClick = (event) => {
+        if (event.button && event.button !== 0) {
+            return;
+        }
+
+        focusDateField();
+        openNativePicker();
+    };
+
+    dateWrapper.addEventListener('click', handleWrapperClick);
     dateField.addEventListener('input', refreshState);
     dateField.addEventListener('change', refreshState);
     reservationForm.addEventListener('reset', () => {
