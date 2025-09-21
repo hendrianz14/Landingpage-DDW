@@ -399,8 +399,23 @@ section {
     width: 100%;
     padding-right: 3rem;
     cursor: pointer;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    caret-color: transparent;
 }
 
+.date-input.has-value input[type="date"],
+.date-input:focus-within input[type="date"] {
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+    caret-color: #fff;
+}
+
+.date-input input[type="date"]::-webkit-calendar-picker-indicator,
+.date-input input[type="date"]::-webkit-inner-spin-button {
+    opacity: 0;
+    pointer-events: none;
+}
 .date-input::before {
     content: attr(data-placeholder);
     position: absolute;
