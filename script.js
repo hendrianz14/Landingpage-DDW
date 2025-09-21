@@ -151,6 +151,42 @@ function initializeReservationDateInput(reservationForm) {
         dateWrapper.classList.toggle('has-value', hasValue);
     };
 
+    const getTodayInputValue = () => {
+        const now = new Date();
+        now.setHours(0, 0, 0, 0);
+        const offsetInMs = now.getTimezoneOffset() * 60 * 1000;
+        const localDate = new Date(now.getTime() - offsetInMs);
+        return localDate.toISOString().split('T')[0];
+    };
+
+    const enforceMinDate = () => {
+        const todayValue = getTodayInputValue();
+        let valueAdjusted = false;
+
+        if (dateField.min !== todayValue) {
+            dateField.min = todayValue;
+        }
+
+        if (dateField.value && dateField.value < todayValue) {
+            dateField.value = todayValue;
+            valueAdjusted = true;
+        }
+
+        return valueAdjusted;
+    };
+
+    const handleDateChange = () => {
+        enforceMinDate();
+        refreshState();
+    };
+
+    const handleDateFocus = () => {
+        const adjusted = enforceMinDate();
+        if (adjusted) {
+            refreshState();
+        }
+    };
+
     const focusDateField = () => {
         if (typeof dateField.focus === 'function') {
             try {
@@ -215,11 +251,16 @@ function initializeReservationDateInput(reservationForm) {
 
     dateWrapper.addEventListener('click', handleWrapperClick);
     dateField.addEventListener('input', refreshState);
-    dateField.addEventListener('change', refreshState);
+    dateField.addEventListener('change', handleDateChange);
+    dateField.addEventListener('focus', handleDateFocus);
     reservationForm.addEventListener('reset', () => {
-        window.requestAnimationFrame(refreshState);
+        window.requestAnimationFrame(() => {
+            enforceMinDate();
+            refreshState();
+        });
     });
 
+    enforceMinDate();
     refreshState();
 }
 
