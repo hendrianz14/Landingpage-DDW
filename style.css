@@ -217,7 +217,7 @@ header.hero::before {
     position: absolute;
     inset: 0;
     background: url('assets/plangddw.jpg') center/cover no-repeat;
-    filter: blur(8px) saturate(110%);
+    filter: blur(5px) saturate(110%);
     transform: scale(1.12);
     z-index: -2;
 }
@@ -618,6 +618,7 @@ section {
     color: #fffbe6;
     font-size: 1rem;
     margin-bottom: 1.2rem;
+    flex-grow: 1;
 }
 .wa-action {
     background: linear-gradient(90deg, #e0b973 60%, #fffbe6 100%);
@@ -630,7 +631,8 @@ section {
     cursor: pointer;
     box-shadow: 0 4px 24px rgba(224,185,115,0.15);
     transition: background 0.2s, color 0.2s;
-    margin-top: 0.5rem;
+    margin-top: auto;
+    align-self: center;
 }
 .wa-action:hover {
     background: #fffbe6;
