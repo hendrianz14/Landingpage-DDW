@@ -36,7 +36,7 @@ img {
     flex-direction: column;
     gap: 3rem;
 }
-.menu-makanan, .menu-minuman {
+.menu-category {
     background: #232323;
     border-radius: 18px;
     box-shadow: 0 2px 16px rgba(224,185,115,0.07);
@@ -44,7 +44,7 @@ img {
     max-width: 900px;
     margin: 0 auto;
 }
-.menu-makanan h3, .menu-minuman h3 {
+.menu-category h3 {
     color: #e0b973;
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
@@ -67,29 +67,38 @@ img {
     padding-left: 0;
     list-style: none;
 }
-.menu-group strong {
+.menu-group:last-child {
+    margin-bottom: 0;
+}
+.menu-group-title {
     display: block;
     color: #fffbe6;
     font-size: 1.1rem;
-    margin-bottom: 0.5rem;
     font-weight: 600;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.35rem;
 }
-.menu-group li {
+.menu-group-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.3rem 0;
+    padding: 0.35rem 0;
     border-bottom: 2px solid #292929;
     color: #fff;
     font-size: 1rem;
 }
-.menu-group li:last-child {
+.menu-group-item:last-of-type {
     border-bottom: none;
 }
-.menu-group span {
+.menu-group-name {
+    flex: 1;
+    padding-right: 1rem;
+}
+.menu-group-price {
     color: #e0b973;
     font-weight: 600;
     margin-left: 1.5rem;
+    white-space: nowrap;
 }
 .location {
     background: #131313;
@@ -170,7 +179,7 @@ img {
         flex-direction: column;
         gap: 1.2rem;
     }
-    .menu-makanan, .menu-minuman {
+    .menu-category {
         max-width: 100%;
         width: 100%;
     }
@@ -333,6 +342,15 @@ header.hero::after {
     position: relative;
     z-index: 1;
 }
+.hero-kicker {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3.2rem;
@@ -443,13 +461,26 @@ section {
     scroll-padding-inline: 5vw;
     scroll-padding-left: 5vw;
     scroll-padding-right: 5vw;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(224,185,115,0.65) rgba(224,185,115,0.12);
 }
 
 .menu-list::-webkit-scrollbar {
-    display: none;
+    height: 8px;
+}
 
+.menu-list::-webkit-scrollbar-track {
+    background: rgba(224,185,115,0.12);
+    border-radius: 999px;
+}
+
+.menu-list::-webkit-scrollbar-thumb {
+    background: rgba(224,185,115,0.65);
+    border-radius: 999px;
+}
+
+.menu-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(224,185,115,0.8);
 }
 .menu-item {
     background: #232323;
@@ -477,6 +508,19 @@ section {
 .menu-item p {
     font-size: 1rem;
     color: #fffbe6;
+}
+
+.menu-loading,
+.menu-feedback {
+    text-align: center;
+    color: #fffbe6;
+    font-size: 1rem;
+    margin: 1.5rem auto 0;
+    opacity: 0.85;
+}
+
+.menu-feedback--error {
+    color: #ffb3b3;
 }
 
 /* Reservasi form */
@@ -795,6 +839,9 @@ footer {
     .hero-content {
         padding: 4rem 0;
     }
+    .hero-kicker {
+        font-size: 0.95rem;
+    }
     .hero-content h1 {
         font-size: 3rem;
     }
@@ -894,6 +941,10 @@ footer {
         padding: 3.5rem 0;
         gap: 1.25rem;
     }
+    .hero-kicker {
+        font-size: 0.9rem;
+        letter-spacing: 0.24em;
+    }
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -905,6 +956,11 @@ footer {
     }
     .menu-list {
         gap: 1.8rem;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .menu-list::-webkit-scrollbar {
+        display: none;
     }
     section {
         padding: 4rem 0;
@@ -933,6 +989,10 @@ footer {
     }
     .menu-item {
         width: clamp(220px, 88vw, 260px);
+    }
+    .hero-kicker {
+        font-size: 0.85rem;
+        letter-spacing: 0.2em;
     }
     .hero-content h1 {
         font-size: 2.2rem;
@@ -974,6 +1034,10 @@ footer {
     }
     .hero-content {
         padding: 3rem 1.3rem 2.5rem;
+    }
+    .hero-kicker {
+        font-size: 0.8rem;
+        letter-spacing: 0.18em;
     }
     .hero-content h1 {
         font-size: 2rem;

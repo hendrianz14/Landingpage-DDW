@@ -1,0 +1,131 @@
+{
+  "specials": [
+    {
+      "title": "Gurame Asam Manis",
+      "description": "Ikan gurame segar dengan saus asam manis khas Djoglo Djawi Wangon.",
+      "image": "assets/grameasammanis.png",
+      "alt": "Gurame asam manis dengan saus merah menggugah selera"
+    },
+    {
+      "title": "Sop Kaki Kambing Kuah Susu",
+      "description": "Sop kaki kambing dengan kuah susu gurih dan rempah pilihan.",
+      "image": "assets/sopkakikambingkuahsusu.png",
+      "alt": "Semangkuk sop kaki kambing kuah susu hangat"
+    },
+    {
+      "title": "Ayam Goreng Kampung",
+      "description": "Ayam kampung goreng renyah ditemani sambal trasi spesial rumah makan.",
+      "image": "assets/ayamkampunggoreng.png",
+      "alt": "Ayam goreng kampung dengan sambal tradisional"
+    },
+    {
+      "title": "Strawberry Frost",
+      "description": "Minuman stroberi dingin dengan tekstur creamy dan aroma menyegarkan.",
+      "image": "assets/strawberryfrost.png",
+      "alt": "Minuman Strawberry Frost berwarna merah muda dengan es batu"
+    },
+    {
+      "title": "Strawberry Squash",
+      "description": "Kombinasi soda dan stroberi segar yang manis sekaligus menyegarkan.",
+      "image": "assets/strawberrysquash.png",
+      "alt": "Gelas berisi Strawberry Squash dengan potongan buah dan daun mint"
+    },
+    {
+      "title": "Lychee Yakult",
+      "description": "Perpaduan Yakult dan buah leci yang lembut, cocok dinikmati saat santai.",
+      "image": "assets/lycheyakult.png",
+      "alt": "Minuman Lychee Yakult dalam gelas tinggi dengan es batu"
+    }
+  ],
+  "fullMenu": [
+    {
+      "title": "Makanan",
+      "columns": [
+        [
+          {
+            "heading": "Aneka Mie",
+            "items": [
+              { "name": "Mie Goreng Spesial", "price": "35.000" },
+              { "name": "Mie Goreng Seafood", "price": "42.000" },
+              { "name": "Mie Rebus Kuah", "price": "32.000" },
+              { "name": "Mie Ayam Jamur", "price": "38.000" }
+            ]
+          },
+          {
+            "heading": "Paket dengan Nasi",
+            "items": [
+              { "name": "Paket Ayam Bakar + Nasi", "price": "48.000" },
+              { "name": "Paket Ikan Bakar + Nasi", "price": "52.000" },
+              { "name": "Paket Bebek Goreng + Nasi", "price": "55.000" }
+            ]
+          },
+          {
+            "heading": "Sambal",
+            "items": [
+              { "name": "Sambal Matah", "price": "8.000" },
+              { "name": "Sambal Terasi", "price": "7.000" },
+              { "name": "Sambal Ijo", "price": "7.000" },
+              { "name": "Sambal Bawang", "price": "7.000" }
+            ]
+          }
+        ],
+        [
+          {
+            "heading": "Aneka Nasi Goreng",
+            "items": [
+              { "name": "Nasi Goreng Spesial", "price": "38.000" },
+              { "name": "Nasi Goreng Seafood", "price": "45.000" },
+              { "name": "Nasi Goreng Kampung", "price": "33.000" },
+              { "name": "Nasi Goreng Sapi Lada Hitam", "price": "44.000" }
+            ]
+          },
+          {
+            "heading": "Lauk",
+            "items": [
+              { "name": "Ayam Bakar", "price": "32.000" },
+              { "name": "Ikan Bakar", "price": "36.000" },
+              { "name": "Bebek Goreng", "price": "39.000" },
+              { "name": "Udang Saus Padang", "price": "42.000" }
+            ]
+          },
+          {
+            "heading": "Sayur",
+            "items": [
+              { "name": "Capcay", "price": "22.000" },
+              { "name": "Kangkung Balacan", "price": "18.000" },
+              { "name": "Tumis Tauge", "price": "16.000" },
+              { "name": "Sayur Asem", "price": "15.000" }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "title": "Minuman",
+      "columns": [
+        [
+          {
+            "items": [
+              { "name": "Es Teh Manis", "price": "8.000" },
+              { "name": "Teh Hangat", "price": "7.000" },
+              { "name": "Es Jeruk", "price": "10.000" },
+              { "name": "Jus Alpukat", "price": "18.000" }
+            ]
+          }
+        ],
+        [
+          {
+            "items": [
+              { "name": "Jus Mangga", "price": "16.000" },
+              { "name": "Jus Semangka", "price": "15.000" },
+              { "name": "Mocktail Signature", "price": "28.000" },
+              { "name": "Coffee Latte", "price": "22.000" },
+              { "name": "Americano", "price": "18.000" },
+              { "name": "Mineral Water", "price": "6.000" }
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+}
