@@ -30,7 +30,8 @@
     </nav>
     <header class="hero">
         <div class="hero-content">
-            <h1>Selamat Datang di Djoglo Djawi Wangon</h1>
+            <p class="hero-kicker">Selamat Datang di</p>
+            <h1>Djoglo Djawi Wangon</h1>
             <p>Rumah Makan bernuansa tradisional dengan cita rasa autentik dan pelayanan hangat.</p>
             <a href="#reservation" class="btn-primary">Reservasi Sekarang</a>
         </div>
@@ -44,37 +45,8 @@
     <section id="menu" class="menu">
         <div class="container">
             <h2>Menu Spesial</h2>
-            <div class="menu-list">
-                <div class="menu-item">
-                    <img src="assets\grameasammanis.png" alt="Gurame asam manis dengan saus merah menggugah selera">
-                    <h3>Gurame Asam Manis</h3>
-                    <p>Ikan gurame segar dengan saus asam manis khas Djoglo Djawi Wangon.</p>
-                </div>
-                <div class="menu-item">
-                    <img src="assets\sopkakikambingkuahsusu.png" alt="Semangkuk sop kaki kambing kuah susu hangat">
-                    <h3>Sop Kaki Kambing Kuah Susu</h3>
-                    <p>Sop kaki kambing dengan kuah susu gurih dan rempah pilihan.</p>
-                </div>
-                <div class="menu-item">
-                    <img src="assets\ayamkampunggoreng.png" alt="Ayam goreng kampung dengan sambal tradisional">
-                    <h3>Ayam Goreng Kampung</h3>
-                    <p>Ayam kampung goreng renyah ditemani sambal trasi spesial rumah makan.</p>
-                </div>
-                <div class="menu-item">
-                    <img src="assets\strawberryfrost.png" alt="Ilustrasi sajian sate signature Djoglo Djawi Wangon">
-                    <h3>Strawberry Frost</h3>
-                    <p>Sate daging sapi maranggi berbumbu manis pedas dengan sambal kecap dan lalapan segar.</p>
-                </div>
-                <div class="menu-item">
-                    <img src="assets\strawberrysquash.png" alt="Ilustrasi rawon sapi premium dengan penyajian modern">
-                    <h3>Strawberry Squash</h3>
-                    <p>Kuah kluwek pekat dengan daging sapi empuk, telur asin, dan taburan bawang goreng.</p>
-                </div>
-                <div class="menu-item">
-                    <img src="assets\lycheyakult.png" alt="Ilustrasi rawon sapi premium dengan penyajian modern">
-                    <h3>Lychee Yakult</h3>
-                    <p>Kuah kluwek pekat dengan daging sapi empuk, telur asin, dan taburan bawang goreng.</p>
-                </div>
+            <div class="menu-list" data-menu-specials aria-live="polite">
+                <p class="menu-loading">Memuat menu spesial...</p>
             </div>
             <!--
             <div class="menu-list" style="margin-top:2.5rem;">
@@ -128,74 +100,8 @@
     <section id="menu-lengkap" class="menu-lengkap">
         <div class="container">
             <h2>Menu Lengkap & Harga</h2>
-            <div class="menu-vertikal">
-                <div class="menu-makanan">
-                    <h3>Makanan</h3>
-                    <div class="menu-list-2col">
-                        <div>
-                            <ul class="menu-group"><strong>Aneka Mie</strong>
-                                <li>Mie Goreng Spesial <span>35.000</span></li>
-                                <li>Mie Goreng Seafood <span>42.000</span></li>
-                                <li>Mie Rebus Kuah <span>32.000</span></li>
-                                <li>Mie Ayam Jamur <span>38.000</span></li>
-                            </ul>
-                            <ul class="menu-group"><strong>Paket dengan Nasi</strong>
-                                <li>Paket Ayam Bakar + Nasi <span>48.000</span></li>
-                                <li>Paket Ikan Bakar + Nasi <span>52.000</span></li>
-                                <li>Paket Bebek Goreng + Nasi <span>55.000</span></li>
-                            </ul>
-                            <ul class="menu-group"><strong>Sambal</strong>
-                                <li>Sambal Matah <span>8.000</span></li>
-                                <li>Sambal Terasi <span>7.000</span></li>
-                                <li>Sambal Ijo <span>7.000</span></li>
-                                <li>Sambal Bawang <span>7.000</span></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul class="menu-group"><strong>Aneka Nasi Goreng</strong>
-                                <li>Nasi Goreng Spesial <span>38.000</span></li>
-                                <li>Nasi Goreng Seafood <span>45.000</span></li>
-                                <li>Nasi Goreng Kampung <span>33.000</span></li>
-                                <li>Nasi Goreng Sapi Lada Hitam <span>44.000</span></li>
-                            </ul>
-                            <ul class="menu-group"><strong>Lauk</strong>
-                                <li>Ayam Bakar <span>32.000</span></li>
-                                <li>Ikan Bakar <span>36.000</span></li>
-                                <li>Bebek Goreng <span>39.000</span></li>
-                                <li>Udang Saus Padang <span>42.000</span></li>
-                            </ul>
-                            <ul class="menu-group"><strong>Sayur</strong>
-                                <li>Capcay <span>22.000</span></li>
-                                <li>Kangkung Balacan <span>18.000</span></li>
-                                <li>Tumis Tauge <span>16.000</span></li>
-                                <li>Sayur Asem <span>15.000</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-minuman">
-                    <h3>Minuman</h3>
-                    <div class="menu-list-2col">
-                        <div>
-                            <ul class="menu-group">
-                                <li>Es Teh Manis <span>8.000</span></li>
-                                <li>Teh Hangat <span>7.000</span></li>
-                                <li>Es Jeruk <span>10.000</span></li>
-                                <li>Jus Alpukat <span>18.000</span></li>
-                        </ul>
-                        </div>
-                        <div>
-                            <ul class="menu-group">
-                                <li>Jus Mangga <span>16.000</span></li>
-                                <li>Jus Semangka <span>15.000</span></li>
-                                <li>Mocktail Signature <span>28.000</span></li>
-                                <li>Coffee Latte <span>22.000</span></li>
-                                <li>Americano <span>18.000</span></li>
-                                <li>Mineral Water <span>6.000</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="menu-vertikal" data-full-menu aria-live="polite">
+                <p class="menu-loading">Memuat daftar menu lengkap...</p>
             </div>
         </div>
     </section>
