@@ -198,7 +198,18 @@
             <h2>Reservasi</h2>
             <form>
                 <input type="text" name="name" placeholder="Nama" required>
-                <input type="date" name="date" required>
+                <div class="input-wrapper date-input">
+                    <input type="date" id="reservation-date" name="date" required aria-label="Tanggal reservasi">
+                    <span class="date-placeholder" aria-hidden="true">Pilih Tanggal</span>
+                    <span class="calendar-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="img" focusable="false">
+                            <rect x="4" y="5" width="16" height="15" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                            <line x1="4" y1="9" x2="20" y2="9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                            <line x1="9" y1="3" x2="9" y2="7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                            <line x1="15" y1="3" x2="15" y2="7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                </div>
                 <select name="time" required>
                     <option value="" disabled selected>Pilih Jam</option>
                     <option value="09:00">09:00</option>

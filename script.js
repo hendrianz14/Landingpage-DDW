@@ -97,6 +97,8 @@ function setupReservationForm(reservationForm) {
         return;
     }
 
+    initializeReservationDateInput(reservationForm);
+
     /**
      * Nama Fungsi: handleReservationSubmit
      * Keterangan: Membentuk pesan reservasi dari input pengguna dan membuka WhatsApp.
@@ -128,6 +130,32 @@ function setupReservationForm(reservationForm) {
     }
 
     reservationForm.addEventListener('submit', handleReservationSubmit);
+}
+
+/**
+ * Nama Fungsi: initializeReservationDateInput
+ * Keterangan: Menambahkan placeholder kustom dan ikon kalender pada input tanggal.
+ */
+function initializeReservationDateInput(reservationForm) {
+    const dateWrapper = reservationForm.querySelector('.date-input');
+    const dateField = dateWrapper?.querySelector('input[type="date"]');
+
+    if (!dateWrapper || !dateField) {
+        return;
+    }
+
+    const refreshState = () => {
+        const hasValue = Boolean(dateField.value);
+        dateWrapper.classList.toggle('has-value', hasValue);
+    };
+
+    dateField.addEventListener('input', refreshState);
+    dateField.addEventListener('change', refreshState);
+    reservationForm.addEventListener('reset', () => {
+        window.requestAnimationFrame(refreshState);
+    });
+
+    refreshState();
 }
 
 /**
