@@ -144,6 +144,8 @@ function initializeReservationDateInput(reservationForm) {
         return;
     }
 
+    const supportsProgrammaticPicker = typeof dateField.showPicker === 'function';
+
     const refreshState = () => {
         const hasValue = Boolean(dateField.value);
         dateWrapper.classList.toggle('has-value', hasValue);
@@ -160,14 +162,19 @@ function initializeReservationDateInput(reservationForm) {
     };
 
     const openNativePicker = () => {
-        if (typeof dateField.showPicker === 'function') {
-            try {
-                dateField.showPicker();
-            } catch (error) {
-                // showPicker dapat menolak ketika dipanggil saat picker sudah terbuka;
-                // kita abaikan agar pengalaman pengguna tidak terganggu.
-            }
+        if (!supportsProgrammaticPicker) {
+            return false;
         }
+
+        try {
+            dateField.showPicker();
+            return true;
+        } catch (error) {
+            // showPicker dapat menolak ketika dipanggil saat picker sudah terbuka;
+            // kita abaikan agar pengalaman pengguna tidak terganggu.
+        }
+
+        return false;
     };
 
     const handleWrapperClick = (event) => {
@@ -175,8 +182,35 @@ function initializeReservationDateInput(reservationForm) {
             return;
         }
 
+        const isDirectDateFieldTap = event.target === dateField;
+
         focusDateField();
-        openNativePicker();
+
+        if (isDirectDateFieldTap) {
+            if (!supportsProgrammaticPicker && event.isTrusted && typeof dateField.click === 'function') {
+                try {
+                    dateField.click();
+                } catch (error) {
+                    // Safari/iOS dapat menolak pemanggilan click saat kontrol sudah terbuka;
+                    // kita abaikan supaya interaksi pengguna tetap mulus.
+                }
+            } else if (supportsProgrammaticPicker) {
+                openNativePicker();
+            }
+
+            return;
+        }
+
+        const pickerOpened = openNativePicker();
+
+        if (!pickerOpened && typeof dateField.click === 'function') {
+            try {
+                dateField.click();
+            } catch (error) {
+                // Beberapa browser bisa menolak pemanggilan click() kedua berturut-turut.
+                // Dalam kasus tersebut kita biarkan interaksi asli berjalan tanpa gangguan.
+            }
+        }
     };
 
     dateWrapper.addEventListener('click', handleWrapperClick);
