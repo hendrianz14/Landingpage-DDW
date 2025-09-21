@@ -16,6 +16,11 @@ function onDomReady() {
     setupResponsiveNavigation(navToggle, navLinks);
     setupReservationForm(reservationForm);
     setupPackageCards(packageCards);
+    initializeMenuFromJson({
+        dataUrl: 'assets/data/menu.json',
+        specialsSelector: '[data-menu-specials]',
+        fullMenuSelector: '[data-full-menu]'
+    });
 }
 
 /**
@@ -346,4 +351,276 @@ function setupPackageCards(packageCards) {
         waBtn.addEventListener('click', handlePackageWhatsapp);
     }
 }
+}
+
+/**
+ * Nama Fungsi: initializeMenuFromJson
+ * Keterangan: Memuat data menu dari berkas JSON eksternal dan merendernya ke dalam halaman.
+ */
+async function initializeMenuFromJson({ dataUrl, specialsSelector, fullMenuSelector } = {}) {
+    const specialsContainer = typeof specialsSelector === 'string' ? document.querySelector(specialsSelector) : null;
+    const fullMenuContainer = typeof fullMenuSelector === 'string' ? document.querySelector(fullMenuSelector) : null;
+
+    if (!specialsContainer && !fullMenuContainer) {
+        return;
+    }
+
+    const setLoadingState = (container, message) => {
+        if (!container) {
+            return;
+        }
+
+        container.innerHTML = '';
+        const loadingMessage = createInfoMessage(message || 'Memuat data...', 'menu-loading');
+        if (loadingMessage) {
+            container.appendChild(loadingMessage);
+        }
+    };
+
+    const setErrorState = (container, message) => {
+        if (!container) {
+            return;
+        }
+
+        container.innerHTML = '';
+        const errorMessage = createInfoMessage(message || 'Menu tidak dapat dimuat.', 'menu-feedback menu-feedback--error');
+        if (errorMessage) {
+            container.appendChild(errorMessage);
+        }
+    };
+
+    setLoadingState(specialsContainer, 'Memuat menu spesial...');
+    setLoadingState(fullMenuContainer, 'Memuat daftar menu lengkap...');
+
+    if (typeof fetch !== 'function') {
+        setErrorState(specialsContainer, 'Peramban Anda belum mendukung pemuatan menu otomatis.');
+        setErrorState(fullMenuContainer, 'Peramban Anda belum mendukung pemuatan menu otomatis.');
+        return;
+    }
+
+    try {
+        const response = await fetch(dataUrl, { cache: 'no-store' });
+        if (!response.ok) {
+            throw new Error(`Gagal memuat data menu: ${response.status}`);
+        }
+
+        const menuData = await response.json();
+
+        if (specialsContainer) {
+            renderSpecialMenu(menuData?.specials, specialsContainer);
+        }
+
+        if (fullMenuContainer) {
+            renderFullMenu(menuData?.fullMenu, fullMenuContainer);
+        }
+    } catch (error) {
+        console.error('Gagal memuat data menu', error);
+        setErrorState(specialsContainer, 'Maaf, data menu belum dapat dimuat. Silakan coba lagi nanti.');
+        setErrorState(fullMenuContainer, 'Maaf, data menu belum dapat dimuat. Silakan coba lagi nanti.');
+    }
+}
+
+/**
+ * Nama Fungsi: renderSpecialMenu
+ * Keterangan: Mengganti konten menu spesial dengan kartu yang dibentuk dari data JSON.
+ */
+function renderSpecialMenu(specials, container) {
+    if (!container) {
+        return;
+    }
+
+    container.innerHTML = '';
+
+    if (!Array.isArray(specials) || specials.length === 0) {
+        const message = createInfoMessage('Menu spesial akan segera hadir.', 'menu-feedback');
+        if (message) {
+            container.appendChild(message);
+        }
+        return;
+    }
+
+    const fragment = document.createDocumentFragment();
+
+    for (const special of specials) {
+        if (!special || typeof special !== 'object') {
+            continue;
+        }
+
+        const card = document.createElement('article');
+        card.className = 'menu-item';
+
+        if (special.image) {
+            const imageElement = document.createElement('img');
+            imageElement.src = special.image;
+            imageElement.alt = special.alt || special.title || '';
+            card.appendChild(imageElement);
+        }
+
+        const titleElement = document.createElement('h3');
+        titleElement.textContent = special.title || 'Menu Spesial';
+        card.appendChild(titleElement);
+
+        if (special.description) {
+            const descriptionElement = document.createElement('p');
+            descriptionElement.textContent = special.description;
+            card.appendChild(descriptionElement);
+        }
+
+        fragment.appendChild(card);
+    }
+
+    container.appendChild(fragment);
+}
+
+/**
+ * Nama Fungsi: renderFullMenu
+ * Keterangan: Membentuk daftar menu lengkap (makanan & minuman) dari data JSON.
+ */
+function renderFullMenu(fullMenu, container) {
+    if (!container) {
+        return;
+    }
+
+    container.innerHTML = '';
+
+    if (!Array.isArray(fullMenu) || fullMenu.length === 0) {
+        const message = createInfoMessage('Daftar menu sedang disiapkan.', 'menu-feedback');
+        if (message) {
+            container.appendChild(message);
+        }
+        return;
+    }
+
+    const fragment = document.createDocumentFragment();
+
+    for (const category of fullMenu) {
+        if (!category || typeof category !== 'object') {
+            continue;
+        }
+
+        const categoryCard = document.createElement('div');
+        categoryCard.classList.add('menu-category');
+
+        const titleElement = document.createElement('h3');
+        titleElement.textContent = category.title || 'Menu';
+        categoryCard.appendChild(titleElement);
+
+        const columnsWrapper = document.createElement('div');
+        columnsWrapper.className = 'menu-list-2col';
+
+        const columnsSource = Array.isArray(category.columns) && category.columns.length > 0
+            ? category.columns
+            : category.groups
+                ? [category.groups]
+                : [];
+
+        for (const columnGroups of columnsSource) {
+            const columnElement = document.createElement('div');
+            const groupsArray = Array.isArray(columnGroups) ? columnGroups : [];
+
+            for (const group of groupsArray) {
+                const groupElement = createMenuGroupElement(group);
+                if (groupElement) {
+                    columnElement.appendChild(groupElement);
+                }
+            }
+
+            if (columnElement.children.length > 0) {
+                columnsWrapper.appendChild(columnElement);
+            }
+        }
+
+        if (columnsWrapper.children.length > 0) {
+            categoryCard.appendChild(columnsWrapper);
+        } else {
+            const placeholder = createInfoMessage('Menu akan segera tersedia.', 'menu-feedback');
+            if (placeholder) {
+                categoryCard.appendChild(placeholder);
+            }
+        }
+
+        fragment.appendChild(categoryCard);
+    }
+
+    container.appendChild(fragment);
+}
+
+/**
+ * Nama Fungsi: createMenuGroupElement
+ * Keterangan: Membentuk daftar HTML untuk setiap grup menu (misal Aneka Mie, Lauk, dll).
+ */
+function createMenuGroupElement(group) {
+    if (!group || typeof group !== 'object') {
+        return null;
+    }
+
+    const heading = typeof group.heading === 'string' ? group.heading.trim() : '';
+    const items = Array.isArray(group.items) ? group.items : [];
+
+    if (!heading && items.length === 0) {
+        return null;
+    }
+
+    const listElement = document.createElement('ul');
+    listElement.className = 'menu-group';
+
+    if (heading) {
+        const headingItem = document.createElement('li');
+        headingItem.className = 'menu-group-title';
+        headingItem.textContent = heading;
+        listElement.appendChild(headingItem);
+    }
+
+    for (const item of items) {
+        if (!item || typeof item !== 'object') {
+            continue;
+        }
+
+        const name = typeof item.name === 'string' ? item.name.trim() : '';
+        const price = typeof item.price === 'string' || typeof item.price === 'number' ? String(item.price) : '';
+
+        if (!name && !price) {
+            continue;
+        }
+
+        const itemElement = document.createElement('li');
+        itemElement.className = 'menu-group-item';
+
+        if (name) {
+            const nameSpan = document.createElement('span');
+            nameSpan.className = 'menu-group-name';
+            nameSpan.textContent = name;
+            itemElement.appendChild(nameSpan);
+        }
+
+        if (price) {
+            const priceSpan = document.createElement('span');
+            priceSpan.className = 'menu-group-price';
+            priceSpan.textContent = price;
+            itemElement.appendChild(priceSpan);
+        }
+
+        listElement.appendChild(itemElement);
+    }
+
+    if (listElement.children.length === 0) {
+        return null;
+    }
+
+    return listElement;
+}
+
+/**
+ * Nama Fungsi: createInfoMessage
+ * Keterangan: Membuat elemen paragraf sederhana untuk pesan status menu (loading/error/info).
+ */
+function createInfoMessage(message, className) {
+    if (!message) {
+        return null;
+    }
+
+    const paragraph = document.createElement('p');
+    paragraph.className = className || 'menu-feedback';
+    paragraph.textContent = message;
+    return paragraph;
 }
