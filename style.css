@@ -385,6 +385,64 @@ section {
     color: #fff;
     border: 1px solid #e0b973;
 }
+.reservation .input-wrapper {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+.reservation .input-wrapper:focus-within {
+    cursor: text;
+}
+
+.date-input input[type="date"] {
+    width: 100%;
+    padding-right: 3rem;
+    cursor: pointer;
+}
+
+.date-input::before {
+    content: attr(data-placeholder);
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.65);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    font-size: 1rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 2.5rem;
+}
+
+.date-input::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    pointer-events: none;
+    opacity: 0.85;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='4' y='5' width='16' height='15' rx='2' ry='2' fill='none' stroke='%23e0b973' stroke-width='1.6'/%3E%3Cline x1='4' y1='9' x2='20' y2='9' stroke='%23e0b973' stroke-width='1.6' stroke-linecap='round'/%3E%3Cline x1='9' y1='3' x2='9' y2='7' stroke='%23e0b973' stroke-width='1.6' stroke-linecap='round'/%3E%3Cline x1='15' y1='3' x2='15' y2='7' stroke='%23e0b973' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.date-input.has-value::before,
+.date-input:focus-within::before {
+    opacity: 0;
+    transform: translateY(-60%);
+}
+
+@supports selector(:has(*)) {
+    .date-input:has(input:valid)::before {
+        opacity: 0;
+        transform: translateY(-60%);
+    }
+}
 .reservation select {
     -webkit-appearance: none;
     -moz-appearance: none;

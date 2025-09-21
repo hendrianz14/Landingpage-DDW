@@ -97,6 +97,8 @@ function setupReservationForm(reservationForm) {
         return;
     }
 
+    initializeReservationDateInput(reservationForm);
+
     /**
      * Nama Fungsi: handleReservationSubmit
      * Keterangan: Membentuk pesan reservasi dari input pengguna dan membuka WhatsApp.
@@ -128,6 +130,64 @@ function setupReservationForm(reservationForm) {
     }
 
     reservationForm.addEventListener('submit', handleReservationSubmit);
+}
+
+/**
+ * Nama Fungsi: initializeReservationDateInput
+ * Keterangan: Menambahkan placeholder kustom dan ikon kalender pada input tanggal.
+ */
+function initializeReservationDateInput(reservationForm) {
+    const dateWrapper = reservationForm.querySelector('.date-input');
+    const dateField = dateWrapper?.querySelector('input[type="date"]');
+
+    if (!dateWrapper || !dateField) {
+        return;
+    }
+
+    const refreshState = () => {
+        const hasValue = Boolean(dateField.value);
+        dateWrapper.classList.toggle('has-value', hasValue);
+    };
+
+    const focusDateField = () => {
+        if (typeof dateField.focus === 'function') {
+            try {
+                dateField.focus({ preventScroll: true });
+            } catch (error) {
+                dateField.focus();
+            }
+        }
+    };
+
+    const openNativePicker = () => {
+        if (typeof dateField.showPicker === 'function') {
+            try {
+                dateField.showPicker();
+            } catch (error) {
+                // showPicker dapat menolak ketika dipanggil saat picker sudah terbuka;
+                // kita abaikan agar pengalaman pengguna tidak terganggu.
+            }
+        }
+    };
+
+    const handleWrapperClick = (event) => {
+        if (event.button && event.button !== 0) {
+            return;
+        }
+
+        focusDateField();
+        openNativePicker();
+    };
+
+    dateWrapper.addEventListener('click', handleWrapperClick);
+
+    dateField.addEventListener('input', refreshState);
+    dateField.addEventListener('change', refreshState);
+    reservationForm.addEventListener('reset', () => {
+        window.requestAnimationFrame(refreshState);
+    });
+
+    refreshState();
 }
 
 /**

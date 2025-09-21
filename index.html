@@ -198,7 +198,9 @@
             <h2>Reservasi</h2>
             <form>
                 <input type="text" name="name" placeholder="Nama" required>
-                <input type="date" name="date" required>
+                <div class="input-wrapper date-input" data-placeholder="Pilih Tanggal">
+                    <input type="date" id="reservation-date" name="date" required aria-label="Tanggal reservasi">
+                </div>
                 <select name="time" required>
                     <option value="" disabled selected>Pilih Jam</option>
                     <option value="09:00">09:00</option>
