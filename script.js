@@ -180,7 +180,6 @@ function initializeReservationDateInput(reservationForm) {
     };
 
     dateWrapper.addEventListener('click', handleWrapperClick);
-
     dateField.addEventListener('input', refreshState);
     dateField.addEventListener('change', refreshState);
     reservationForm.addEventListener('reset', () => {
