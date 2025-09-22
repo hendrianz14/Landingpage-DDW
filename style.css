@@ -26,6 +26,7 @@ img {
 .menu-lengkap h2 {
     color: #e0b973;
     font-family: 'Playfair Display', serif;
+    font-weight: 700;
     text-align: center;
     margin-bottom: 2.5rem;
 }
@@ -47,6 +48,7 @@ img {
     color: #e0b973;
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
+    font-weight: 700;
     margin-bottom: 1.2rem;
     text-align: center;
 }
@@ -64,13 +66,15 @@ img {
     margin-bottom: 1.5rem;
     padding-left: 0;
     list-style: none;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 .menu-group strong {
     display: block;
     color: #fffbe6;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 0.03em;
 }
 .menu-group li {
     display: flex;
@@ -80,13 +84,15 @@ img {
     border-bottom: 2px solid #292929;
     color: #fff;
     font-size: 1rem;
+    font-weight: 500;
 }
 .menu-group li:last-child {
     border-bottom: none;
 }
 .menu-group span {
     color: #e0b973;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 0.02em;
     margin-left: 1.5rem;
 }
 .location {
@@ -98,6 +104,7 @@ img {
     font-family: 'Playfair Display', serif;
     color: #e0b973;
     font-size: 2.5rem;
+    font-weight: 700;
     margin-bottom: 1.5rem;
 }
 
@@ -182,6 +189,7 @@ img {
 body {
     margin: 0;
     font-family: 'Montserrat', Arial, sans-serif;
+    font-synthesis: none;
     background: #181818;
     color: #fff;
     line-height: 1.6;
@@ -250,7 +258,7 @@ header.hero::after {
     font-size: 2.1rem;
     letter-spacing: 1.8px;
     color: #e0b973;
-    font-weight: bold;
+    font-weight: 700;
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
@@ -281,7 +289,9 @@ header.hero::after {
 .nav-links a {
     color: #fff;
     text-decoration: none;
-    font-weight: 600;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.03em;
     transition: color 0.2s;
 }
 .nav-links a:hover {
@@ -334,6 +344,8 @@ header.hero::after {
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     color: #e0b973;
+    font-weight: 800;
+    letter-spacing: 0.02em;
     margin-bottom: 0;
 }
 .hero-content p {
@@ -415,6 +427,7 @@ section {
     font-family: 'Playfair Display', serif;
     color: #e0b973;
     font-size: 2.5rem;
+    font-weight: 700;
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -466,6 +479,7 @@ section {
 .menu-item h3 {
     color: #e0b973;
     font-family: 'Playfair Display', serif;
+    font-weight: 700;
     margin-bottom: 0.5rem;
 }
 .menu-item p {
@@ -612,7 +626,7 @@ section {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     margin-bottom: 0.7rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 .package-desc {
     color: #fffbe6;
@@ -627,7 +641,7 @@ section {
     border: none;
     border-radius: 30px;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
     box-shadow: 0 4px 24px rgba(224,185,115,0.15);
     transition: background 0.2s, color 0.2s;
@@ -668,6 +682,7 @@ footer {
     font-family: 'Playfair Display', serif;
     font-size: 1.7rem;
     margin: 0 0 0.75rem 0;
+    font-weight: 700;
     color: #fff;
 }
 .footer-social-subtitle {
@@ -739,6 +754,7 @@ footer {
     font-family: 'Playfair Display', serif;
     color: #e0b973;
     font-size: 2.5rem;
+    font-weight: 700;
     text-align: center;
     margin-bottom: 1rem;
 }
