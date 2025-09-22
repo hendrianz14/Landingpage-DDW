@@ -26,6 +26,7 @@ img {
 .menu-lengkap h2 {
     color: #e0b973;
     font-family: 'Playfair Display', serif;
+    --font-wght: 700;
     font-weight: 700;
     text-align: center;
     margin-bottom: 2.5rem;
@@ -49,6 +50,7 @@ img {
     color: #e0b973;
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
+    --font-wght: 700;
     font-weight: 700;
     margin-bottom: 1.2rem;
     text-align: center;
@@ -74,6 +76,7 @@ img {
     display: block;
     color: #fffbe6;
     font-size: 1.1rem;
+    --font-wght: 600;
     font-weight: 600;
     letter-spacing: 0.01em;
     margin-bottom: 0.35rem;
@@ -96,6 +99,7 @@ img {
 }
 .menu-group-price {
     color: #e0b973;
+    --font-wght: 600;
     font-weight: 600;
     margin-left: 1.5rem;
     white-space: nowrap;
@@ -109,6 +113,7 @@ img {
     font-family: 'Playfair Display', serif;
     color: #e0b973;
     font-size: 2.5rem;
+    --font-wght: 700;
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
@@ -193,15 +198,37 @@ img {
 }
 body {
     margin: 0;
+    --font-wght: 400;
     font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: var(--font-wght, 400);
+    font-optical-sizing: auto;
+    font-synthesis: none;
     background: #181818;
     color: #fff;
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     scrollbar-width: none;       /* Firefox */
     -ms-overflow-style: none;
     isolation: isolate;
     padding-top: var(--nav-height);
+}
+
+strong,
+b {
+    --font-wght: 700;
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    --font-wght: 700;
 }
 body::-webkit-scrollbar {
   display: none;               /* Safari + Chrome */
@@ -262,6 +289,7 @@ header.hero::after {
     font-size: 2.1rem;
     letter-spacing: 1.8px;
     color: #e0b973;
+    --font-wght: 700;
     font-weight: 700;
     display: inline-flex;
     align-items: center;
@@ -293,6 +321,7 @@ header.hero::after {
 .nav-links a {
     color: #fff;
     text-decoration: none;
+    --font-wght: 600;
     font-weight: 600;
     transition: color 0.5s;
 }
@@ -345,6 +374,7 @@ header.hero::after {
 .hero-kicker {
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 1rem;
+    --font-wght: 600;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.32em;
@@ -355,6 +385,7 @@ header.hero::after {
     font-family: 'Playfair Display', serif;
     font-size: 3.2rem;
     color: #e0b973;
+    --font-wght: 700;
     font-weight: 700;
     margin-bottom: 0;
 }
@@ -370,6 +401,7 @@ header.hero::after {
     border: none;
     border-radius: 30px;
     font-size: 1.1rem;
+    --font-wght: 600;
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 4px 24px rgba(224,185,115,0.15);
@@ -400,6 +432,7 @@ header.hero::after {
     border: 1px solid rgba(224,185,115,0.6);
     border-radius: 30px;
     font-size: 1.05rem;
+    --font-wght: 600;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
@@ -437,6 +470,7 @@ section {
     font-family: 'Playfair Display', serif;
     color: #e0b973;
     font-size: 2.5rem;
+    --font-wght: 700;
     font-weight: 700;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -502,6 +536,7 @@ section {
 .menu-item h3 {
     color: #e0b973;
     font-family: 'Playfair Display', serif;
+    --font-wght: 700;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
@@ -662,6 +697,7 @@ section {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     margin-bottom: 0.7rem;
+    --font-wght: 700;
     font-weight: 700;
 }
 .package-desc {
@@ -677,6 +713,7 @@ section {
     border: none;
     border-radius: 30px;
     font-size: 1rem;
+    --font-wght: 700;
     font-weight: 700;
     cursor: pointer;
     box-shadow: 0 4px 24px rgba(224,185,115,0.15);
@@ -718,6 +755,7 @@ footer {
     font-family: 'Playfair Display', serif;
     font-size: 1.7rem;
     margin: 0 0 0.75rem 0;
+    --font-wght: 700;
     font-weight: 700;
     color: #fff;
 }
@@ -737,6 +775,7 @@ footer {
     margin: 0;
 }
 .footer-social-list li {
+    --font-wght: 600;
     font-weight: 600;
 }
 .footer-social-list a {
@@ -790,6 +829,7 @@ footer {
     font-family: 'Playfair Display', serif;
     color: #e0b973;
     font-size: 2.5rem;
+    --font-wght: 700;
     font-weight: 700;
     text-align: center;
     margin-bottom: 1rem;
