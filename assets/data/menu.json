@@ -106,9 +106,7 @@
                 "price": "60.000"
               }
             ]
-          }
-        ],
-        [
+          },
           {
             "heading": "Lauk",
             "items": [
@@ -204,9 +202,7 @@
                 "price": "10.000"
               }
             ]
-          }
-        ],
-        [
+          },
           {
             "heading": "Aneka Sambal",
             "items": [
@@ -223,9 +219,7 @@
                 "price": "3.500"
               }
             ]
-          }
-        ],
-        [
+          },
           {
             "heading": "Jajanan",
             "items": [
@@ -285,9 +279,7 @@
                 "price": "23.000"
               }
             ]
-          }
-        ],
-        [
+          },
           {
             "heading": "Aneka Mie",
             "items": [
@@ -312,9 +304,7 @@
                 "price": "22.000"
               }
             ]
-          }
-        ],
-        [
+          },
           {
             "heading": "Paket Hemat",
             "items": [
@@ -337,147 +327,151 @@
         [
           {
             "items": [
-            {
-              "name": "V60",
-              "price": "12.000"
-            },
-            {
-              "name": "Americano",
-              "price": "10.000"
-            },
-            {
-              "name": "Coffee Latte",
-              "price": "18.000"
-            },
-            {
-              "name": "Kopi Susu Gula Aren",
-              "price": "18.000"
-            },
-            {
-              "name": "Vietnam Drip",
-              "price": "10.000"
-            }
-          ]
-        },
-        {
-            "items": [
-            {
-              "name": "Strawberry Frost",
-              "price": "17.000"
-            },
-            {
-              "name": "Strawberry Squash",
-              "price": "13.000"
-            },
-            {
-              "name": "Melon Squash",
-              "price": "13.000"
-            },
-            {
-              "name": "Lychee Yakult",
-              "price": "18.000"
-            },
-            {
-              "name": "Gula Asem Jawa",
-              "price": "15.000"
-            }
-          ]
-        },
-        {
-            "items": [
-            {
-              "name": "Leci Tea",
-              "price": "15.000"
-            },
-            {
-              "name": "Lemon Tea",
-              "price": "13.000"
-            },
-            {
-              "name": "Ice Americano",
-              "price": "13.000"
-            },
-            {
-              "name": "Es Teh",
-              "price": "5.000"
-            },
-            {
-              "name": "Teh Hangat",
-              "price": "4.000"
-            }
-          ]
-        },
-        {
-            "items": [
-            {
-              "name": "Air Mineral (600ml)",
-              "price": "5.000"
-            },
-            {
-              "name": "Es Jeruk",
-              "price": "5.000"
-            },
-            {
-              "name": "Jeruk Hangat",
-              "price": "4.000"
-            },
-            {
-              "name": "Hazelnut Latte",
-              "price": "18.000"
-            },
-            {
-              "name": "Caramel Latte",
-              "price": "18.000"
-            }
-          ]
-        },
-        {
-            "items": [
-            {
-              "name": "Jahe Susu",
-              "price": "10.000"
-            },
-            {
-              "name": "Jus Mangga",
-              "price": "12.000"
-            },
-            {
-              "name": "Jus Jambu",
-              "price": "12.000"
-            },
-            {
-              "name": "Jus Alpukat",
-              "price": "12.000"
-            },
-            {
-              "name": "Jus Mangga",
-              "price": "15.000"
-            }
+              {
+                "name": "V60",
+                "price": "12.000"
+              },
+              {
+                "name": "Americano",
+                "price": "10.000"
+              },
+              {
+                "name": "Coffee Latte",
+                "price": "18.000"
+              },
+              {
+                "name": "Kopi Susu Gula Aren",
+                "price": "18.000"
+              },
+              {
+                "name": "Vietnam Drip",
+                "price": "10.000"
+              }
             ]
           },
           {
             "items": [
-            {
-              "name": "Jus Jambu",
-              "price": "15.000"
-            },
-            {
-              "name": "Jus Alpukat",
-              "price": "15.000"
-            },
-            {
-              "name": "Strawberry Frost",
-              "price": "18.000"
-            },
-            {
-              "name": "Strawberry Squash",
-              "price": "15.000"
-            },
-            {
-              "name": "Melon Squash",
-              "price": "15.000"
-            }
-          ]
+              {
+                "name": "Strawberry Frost",
+                "price": "17.000"
+              },
+              {
+                "name": "Strawberry Squash",
+                "price": "13.000"
+              },
+              {
+                "name": "Melon Squash",
+                "price": "13.000"
+              },
+              {
+                "name": "Lychee Yakult",
+                "price": "18.000"
+              },
+              {
+                "name": "Gula Asem Jawa",
+                "price": "15.000"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "items": [
+              {
+                "name": "Leci Tea",
+                "price": "15.000"
+              },
+              {
+                "name": "Lemon Tea",
+                "price": "13.000"
+              },
+              {
+                "name": "Ice Americano",
+                "price": "13.000"
+              },
+              {
+                "name": "Es Teh",
+                "price": "5.000"
+              },
+              {
+                "name": "Teh Hangat",
+                "price": "4.000"
+              }
+            ]
+          },
+          {
+            "items": [
+              {
+                "name": "Air Mineral (600ml)",
+                "price": "5.000"
+              },
+              {
+                "name": "Es Jeruk",
+                "price": "5.000"
+              },
+              {
+                "name": "Jeruk Hangat",
+                "price": "4.000"
+              },
+              {
+                "name": "Hazelnut Latte",
+                "price": "18.000"
+              },
+              {
+                "name": "Caramel Latte",
+                "price": "18.000"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "items": [
+              {
+                "name": "Jahe Susu",
+                "price": "10.000"
+              },
+              {
+                "name": "Jus Mangga",
+                "price": "12.000"
+              },
+              {
+                "name": "Jus Jambu",
+                "price": "12.000"
+              },
+              {
+                "name": "Jus Alpukat",
+                "price": "12.000"
+              },
+              {
+                "name": "Jus Mangga",
+                "price": "15.000"
+              }
+            ]
+          },
+          {
+            "items": [
+              {
+                "name": "Jus Jambu",
+                "price": "15.000"
+              },
+              {
+                "name": "Jus Alpukat",
+                "price": "15.000"
+              },
+              {
+                "name": "Strawberry Frost",
+                "price": "18.000"
+              },
+              {
+                "name": "Strawberry Squash",
+                "price": "15.000"
+              },
+              {
+                "name": "Melon Squash",
+                "price": "15.000"
+              }
+            ]
           }
         ]
       ]
