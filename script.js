@@ -159,7 +159,7 @@ function initializeReservationDateInput(reservationForm) {
     const getTodayInputValue = () => {
         const now = new Date();
         now.setHours(0, 0, 0, 0);
-        const offsetInMs = now.getTimezoneOffset() * 60 * 1000;
+        const offsetInMs = now.getTimezoneOffset() * 60 * 1.000;
         const localDate = new Date(now.getTime() - offsetInMs);
         return localDate.toISOString().split('T')[0];
     };

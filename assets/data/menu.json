@@ -2,37 +2,37 @@
   "specials": [
     {
       "title": "Gurame Asam Manis",
-      "description": "Ikan gurame segar dengan saus asam manis khas Djoglo Djawi Wangon.",
+      "description": "Kulitnya crispy,dagingnya lembut dengan siraman saus asam manis khas Djoglo Djawi Wangon.",
       "image": "assets/grameasammanis.jpg",
       "alt": "Gurame asam manis dengan saus merah menggugah selera"
     },
     {
       "title": "Sop Kaki Kambing Kuah Susu",
-      "description": "Sop kaki kambing dengan kuah susu gurih dan rempah pilihan.",
+      "description": "Sop kaki kambing dengan kuah susu creamy dan gurih,kuah susu asli tanpa santan.",
       "image": "assets/sopkakikambingkuahsusu.jpg",
       "alt": "Semangkuk sop kaki kambing kuah susu hangat"
     },
     {
       "title": "Ayam Goreng Kampung",
-      "description": "Ayam kampung goreng renyah ditemani sambal trasi spesial rumah makan.",
+      "description": "Ayam kampung goreng pilihan yang renyah ditemani sambal pedas khas Djoglo Djawi Wangon.",
       "image": "assets/ayamkampunggoreng.jpg",
-      "alt": "Ayam goreng kampung dengan sambal tradisional"
+      "alt": "Ayam goreng kampung dengan sambal pedas"
     },
     {
       "title": "Strawberry Frost",
-      "description": "Minuman stroberi dingin dengan tekstur creamy dan aroma menyegarkan.",
+      "description": "Minuman stroberi dingin dengan tekstur creamy dan es yang lembut.",
       "image": "assets/strawberryfrost.jpg",
       "alt": "Minuman Strawberry Frost berwarna merah muda dengan es batu"
     },
     {
       "title": "Strawberry Squash",
-      "description": "Kombinasi soda dan stroberi segar yang manis sekaligus menyegarkan.",
+      "description": "Rasa stroberi segar yang manis sekaligus menyegarkan khas Djoglo Djawi Wangon.",
       "image": "assets/strawberrysquash.jpg",
       "alt": "Gelas berisi Strawberry Squash dengan potongan buah dan daun mint"
     },
     {
       "title": "Lychee Yakult",
-      "description": "Perpaduan Yakult dan buah leci yang lembut, cocok dinikmati saat santai.",
+      "description": "Perpaduan Yakult yang menyehatkan dan buah leci yang lembut manis dan segar.",
       "image": "assets/lycheyakult.jpg",
       "alt": "Minuman Lychee Yakult dalam gelas tinggi dengan es batu"
     }
@@ -43,58 +43,275 @@
       "columns": [
         [
           {
-            "heading": "Aneka Mie",
+            "heading": "PAKET NASI (Lauk + Nasi + Sambal)",
             "items": [
-              { "name": "Mie Goreng Spesial", "price": "35.000" },
-              { "name": "Mie Goreng Seafood", "price": "42.000" },
-              { "name": "Mie Rebus Kuah", "price": "32.000" },
-              { "name": "Mie Ayam Jamur", "price": "38.000" }
-            ]
-          },
-          {
-            "heading": "Paket dengan Nasi",
-            "items": [
-              { "name": "Paket Ayam Bakar + Nasi", "price": "48.000" },
-              { "name": "Paket Ikan Bakar + Nasi", "price": "52.000" },
-              { "name": "Paket Bebek Goreng + Nasi", "price": "55.000" }
-            ]
-          },
-          {
-            "heading": "Sambal",
-            "items": [
-              { "name": "Sambal Matah", "price": "8.000" },
-              { "name": "Sambal Terasi", "price": "7.000" },
-              { "name": "Sambal Ijo", "price": "7.000" },
-              { "name": "Sambal Bawang", "price": "7.000" }
-            ]
-          }
-        ],
-        [
-          {
-            "heading": "Aneka Nasi Goreng",
-            "items": [
-              { "name": "Nasi Goreng Spesial", "price": "38.000" },
-              { "name": "Nasi Goreng Seafood", "price": "45.000" },
-              { "name": "Nasi Goreng Kampung", "price": "33.000" },
-              { "name": "Nasi Goreng Sapi Lada Hitam", "price": "44.000" }
+              {
+                "name": "Sop Kaki Kambing Kuah Susu",
+                "price": "37.000"
+              },
+              {
+                "name": "Ayam Goreng Kampung",
+                "price": "29.000"
+              },
+              {
+                "name": "Bebek Goreng",
+                "price": "35.000"
+              },
+              {
+                "name": "Ikan Goreng",
+                "price": "25.000"
+              },
+              {
+                "name": "Ikan Pecak",
+                "price": "28.000"
+              },
+              {
+                "name": "Puyuh",
+                "price": "26.000"
+              },
+              {
+                "name": "Sop Iga",
+                "price": "38.000"
+              },
+              {
+                "name": "Pindang Patin",
+                "price": "25.000"
+              },
+              {
+                "name": "Ayam Boiler",
+                "price": "20.000"
+              },
+              {
+                "name": "Ayam Boiler Bakar",
+                "price": "23.000"
+              },
+              {
+                "name": "Ayam Bakar Kampung",
+                "price": "31.000"
+              },
+              {
+                "name": "Ikan Bakar",
+                "price": "28.000"
+              },
+              {
+                "name": "Gurame Goreng",
+                "price": "50.000"
+              },
+              {
+                "name": "Gurame Bakar",
+                "price": "55.000"
+              },
+              {
+                "name": "Gurame Asam Manis",
+                "price": "60.000"
+              }
             ]
           },
           {
             "heading": "Lauk",
             "items": [
-              { "name": "Ayam Bakar", "price": "32.000" },
-              { "name": "Ikan Bakar", "price": "36.000" },
-              { "name": "Bebek Goreng", "price": "39.000" },
-              { "name": "Udang Saus Padang", "price": "42.000" }
+              {
+                "name": "Sop Kaki Kambing Kuah Susu",
+                "price": "33.000"
+              },
+              {
+                "name": "Ayam Goreng Kampung",
+                "price": "25.000"
+              },
+              {
+                "name": "Bebek Goreng",
+                "price": "31.000"
+              },
+              {
+                "name": "Ikan Goreng",
+                "price": "22.000"
+              },
+              {
+                "name": "Ikan Pecak",
+                "price": "24.000"
+              },
+              {
+                "name": "Tahu Tempe",
+                "price": "5.000"
+              },
+              {
+                "name": "Puyuh",
+                "price": "23.000"
+              },
+              {
+                "name": "Sop Iga",
+                "price": "35.000"
+              },
+              {
+                "name": "Pindang Patin",
+                "price": "22.000"
+              },
+              {
+                "name": "Ikan Bakar",
+                "price": "24.000"
+              },
+              {
+                "name": "Ayam Boiler Bakar",
+                "price": "19.000"
+              },
+              {
+                "name": "Ayam Boiler",
+                "price": "16.000"
+              },
+              {
+                "name": "Ayam Bakar Kampung",
+                "price": "27.000"
+              }
             ]
           },
           {
             "heading": "Sayur",
             "items": [
-              { "name": "Capcay", "price": "22.000" },
-              { "name": "Kangkung Balacan", "price": "18.000" },
-              { "name": "Tumis Tauge", "price": "16.000" },
-              { "name": "Sayur Asem", "price": "15.000" }
+              {
+                "name": "Sayur Asem",
+                "price": "9.000"
+              },
+              {
+                "name": "Ca Kangkung",
+                "price": "8.000"
+              },
+              {
+                "name": "Ca Kacang Panjang",
+                "price": "8.000"
+              },
+              {
+                "name": "Terong Goreng",
+                "price": "6.000"
+              },
+              {
+                "name": "Kobis Goreng",
+                "price": "4.500"
+              },
+              {
+                "name": "Ca Toge",
+                "price": "10.000"
+              },
+              {
+                "name": "Ca Kangkung",
+                "price": "10.000"
+              },
+              {
+                "name": "Ca Kacang Panjang",
+                "price": "10.000"
+              }
+            ]
+          },
+          {
+            "heading": "Aneka Sambal",
+            "items": [
+              {
+                "name": "Sambal Ijo",
+                "price": "3.500"
+              },
+              {
+                "name": "Sambal Tomat",
+                "price": "3.500"
+              },
+              {
+                "name": "Sambal Bawang",
+                "price": "3.500"
+              }
+            ]
+          },
+          {
+            "heading": "Jajanan",
+            "items": [
+              {
+                "name": "Kentang Goreng",
+                "price": "10.000"
+              },
+              {
+                "name": "Nugget Sosis",
+                "price": "15.000"
+              },
+              {
+                "name": "Cireg",
+                "price": "10.000"
+              },
+              {
+                "name": "Mendoan",
+                "price": "10.000"
+              },
+              {
+                "name": "Tahu Isi",
+                "price": "10.000"
+              },
+              {
+                "name": "Pisang Goreng",
+                "price": "10.000"
+              }
+            ]
+          },
+          {
+            "heading": "Aneka Nasi Goreng",
+            "items": [
+              {
+                "name": "Nasi Goreng Biasa",
+                "price": "15.000"
+              },
+              {
+                "name": "Nasi Goreng Kemangi Teri",
+                "price": "20.000"
+              },
+              {
+                "name": "Nasi Goreng Kampung",
+                "price": "22.000"
+              },
+              {
+                "name": "Nasi Goreng Surabaya",
+                "price": "20.000"
+              },
+              {
+                "name": "Nasi Goreng Ati Ampela",
+                "price": "20.000"
+              },
+              {
+                "name": "Nasi Goreng Spesial DDW",
+                "price": "23.000"
+              }
+            ]
+          },
+          {
+            "heading": "Aneka Mie",
+            "items": [
+              {
+                "name": "Mie Goreng Biasa",
+                "price": "15.000"
+              },
+              {
+                "name": "Mie Goreng Special",
+                "price": "22.000"
+              },
+              {
+                "name": "Mie Goreng Ati Ampela",
+                "price": "20.000"
+              },
+              {
+                "name": "Mie Rebus Biasa",
+                "price": "18.000"
+              },
+              {
+                "name": "Mie Rebus DDW",
+                "price": "22.000"
+              }
+            ]
+          },
+          {
+            "heading": "Paket Hemat",
+            "items": [
+              {
+                "name": "Paket Chicken Katsu + Es Teh",
+                "price": "20.000"
+              },
+              {
+                "name": "Paket Nasgor + Es Teh",
+                "price": "20.000"
+              }
             ]
           }
         ]
@@ -106,23 +323,127 @@
         [
           {
             "items": [
-              { "name": "Es Teh Manis", "price": "8.000" },
-              { "name": "Teh Hangat", "price": "7.000" },
-              { "name": "Es Jeruk", "price": "10.000" },
-              { "name": "Jus Alpukat", "price": "18.000" }
-            ]
-          }
-        ],
-        [
-          {
-            "items": [
-              { "name": "Jus Mangga", "price": "16.000" },
-              { "name": "Jus Semangka", "price": "15.000" },
-              { "name": "Mocktail Signature", "price": "28.000" },
-              { "name": "Coffee Latte", "price": "22.000" },
-              { "name": "Americano", "price": "18.000" },
-              { "name": "Mineral Water", "price": "6.000" }
-            ]
+      {
+        "name": "V60",
+        "price": "12.000"
+      },
+      {
+        "name": "Americano",
+        "price": "10.000"
+      },
+      {
+        "name": "Coffee Latte",
+        "price": "18.000"
+      },
+      {
+        "name": "Kopi Susu Gula Aren",
+        "price": "18.000"
+      },
+      {
+        "name": "Vietnam Drip",
+        "price": "10.000"
+      },
+      {
+        "name": "Strawberry Frost",
+        "price": "17.000"
+      },
+      {
+        "name": "Strawberry Squash",
+        "price": "13.000"
+      },
+      {
+        "name": "Melon Squash",
+        "price": "13.000"
+      },
+      {
+        "name": "Lychee Yakult",
+        "price": "18.000"
+      },
+      {
+        "name": "Gula Asem Jawa",
+        "price": "15.000"
+      },
+      {
+        "name": "Leci Tea",
+        "price": "15.000"
+      },
+      {
+        "name": "Lemon Tea",
+        "price": "13.000"
+      },
+      {
+        "name": "Ice Americano",
+        "price": "13.000"
+      },
+      {
+        "name": "Es Teh",
+        "price": "5.000"
+      },
+      {
+        "name": "Teh Hangat",
+        "price": "4.000"
+      },
+      {
+        "name": "Air Mineral (600ml)",
+        "price": "5.000"
+      },
+      {
+        "name": "Es Jeruk",
+        "price": "5.000"
+      },
+      {
+        "name": "Jeruk Hangat",
+        "price": "4.000"
+      },
+      {
+        "name": "Hazelnut Latte",
+        "price": "18.000"
+      },
+      {
+        "name": "Caramel Latte",
+        "price": "18.000"
+      },
+      {
+        "name": "Jahe Susu",
+        "price": "10.000"
+      },
+      {
+        "name": "Jus Mangga",
+        "price": "12.000"
+      },
+      {
+        "name": "Jus Jambu",
+        "price": "12.000"
+      },
+      {
+        "name": "Jus Alpukat",
+        "price": "12.000"
+      },
+      {
+        "name": "Jus Mangga",
+        "price": "15.000"
+      },
+      {
+        "name": "Jus Jambu",
+        "price": "15.000"
+      },
+      {
+        "name": "Jus Alpukat",
+        "price": "15.000"
+      },
+      {
+        "name": "Strawberry Frost",
+        "price": "18.000"
+      },
+      {
+        "name": "Strawberry Squash",
+        "price": "15.000"
+      },
+      {
+        "name": "Melon Squash",
+        "price": "15.000"
+      }
+    ]
           }
         ]
       ]
