@@ -216,6 +216,7 @@ body {
     padding-top: var(--nav-height);
 }
 
+
 strong,
 b {
     --font-wght: 700;
@@ -230,6 +231,7 @@ h5,
 h6 {
     --font-wght: 700;
 }
+
 body::-webkit-scrollbar {
   display: none;               /* Safari + Chrome */
 }
