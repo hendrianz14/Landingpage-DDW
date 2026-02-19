@@ -127,7 +127,7 @@ function setupReservationForm(reservationForm) {
          * Keterangan: Membuka tab WhatsApp baru dengan pesan yang sudah dikodekan.
          */
         function openWhatsappWithMessage(text) {
-            const waUrl = `https://wa.me/6281229291499?text=${encodeURIComponent(text)}`;
+            const waUrl = `https://wa.me/6282220211273?text=${encodeURIComponent(text)}`;
             window.open(waUrl, '_blank');
         }
 
@@ -339,7 +339,7 @@ function setupPackageCards(packageCards) {
             message += `, reservasi atas nama ${name} pada tanggal ${date} jam ${time}`;
         }
 
-        const waUrl = `https://wa.me/6281229291499?text=${encodeURIComponent(message)}`;
+        const waUrl = `https://wa.me/6282220211273?text=${encodeURIComponent(message)}`;
         window.open(waUrl, '_blank');
     }
 
