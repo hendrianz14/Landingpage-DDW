@@ -10,11 +10,18 @@ document.addEventListener('DOMContentLoaded', onDomReady);
 function onDomReady() {
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
-    const reservationForm = document.querySelector('.reservation form');
+    const reservationForm = document.querySelector('.reservation form:not(#ramadhan-form)');
     const packageCards = Array.from(document.querySelectorAll('.package-card'));
 
     setupResponsiveNavigation(navToggle, navLinks);
     setupReservationForm(reservationForm);
+
+    const ramadhanForm = document.getElementById('ramadhan-form');
+    if (ramadhanForm) {
+        initializeReservationDateInput(ramadhanForm);
+    }
+
+    setupScrollSpy();
     setupPackageCards(packageCards);
     initializeMenuFromJson({
         dataUrl: 'assets/data/menu.json',
@@ -278,15 +285,15 @@ function setupPackageCards(packageCards) {
         return;
     }
     document.addEventListener('click', function (e) {
-    // Cek apakah klik terjadi DI DALAM salah satu .package-card
-    const clickedInsideCard = e.target.closest('.package-card');
-    if (!clickedInsideCard) {
-        // Kalau klik di luar semua card → hapus semua .selected
-        document.querySelectorAll('.package-card.selected').forEach(card => {
-            card.classList.remove('selected');
-        });
-    }
-});
+        // Cek apakah klik terjadi DI DALAM salah satu .package-card
+        const clickedInsideCard = e.target.closest('.package-card');
+        if (!clickedInsideCard) {
+            // Kalau klik di luar semua card → hapus semua .selected
+            document.querySelectorAll('.package-card.selected').forEach(card => {
+                card.classList.remove('selected');
+            });
+        }
+    });
 
     /**
      * Nama Fungsi: markSelectedCard
@@ -304,19 +311,19 @@ function setupPackageCards(packageCards) {
      * Keterangan: Memberi highlight pada kartu paket yang baru dipilih.
      */
     function handlePackageCardClick(event) {
-    const currentCard = event.currentTarget;
+        const currentCard = event.currentTarget;
 
-    const isAlreadySelected = currentCard.classList.contains('selected');
+        const isAlreadySelected = currentCard.classList.contains('selected');
 
-    if (isAlreadySelected) {
-        currentCard.classList.remove('selected');
-    } else {
-        for (const card of packageCards) {
-            card.classList.remove('selected');
+        if (isAlreadySelected) {
+            currentCard.classList.remove('selected');
+        } else {
+            for (const card of packageCards) {
+                card.classList.remove('selected');
+            }
+            currentCard.classList.add('selected');
         }
-        currentCard.classList.add('selected');
     }
-}
     /**
      * Nama Fungsi: handlePackageWhatsapp
      * Keterangan: Mengirimkan pesan WhatsApp terkait paket tertentu tanpa kehilangan fungsi pemilihan kartu.
@@ -344,13 +351,13 @@ function setupPackageCards(packageCards) {
     }
 
     for (const card of packageCards) {
-    card.addEventListener('click', handlePackageCardClick);
+        card.addEventListener('click', handlePackageCardClick);
 
-    const waBtn = card.querySelector('.wa-action');
-    if (waBtn) {
-        waBtn.addEventListener('click', handlePackageWhatsapp);
+        const waBtn = card.querySelector('.wa-action');
+        if (waBtn) {
+            waBtn.addEventListener('click', handlePackageWhatsapp);
+        }
     }
-}
 }
 
 /**
@@ -623,4 +630,35 @@ function createInfoMessage(message, className) {
     paragraph.className = className || 'menu-feedback';
     paragraph.textContent = message;
     return paragraph;
+}
+
+/**
+ * Nama Fungsi: setupScrollSpy
+ * Keterangan: Mengubah status link navigasi menjadi aktif berdasarkan posisi scroll halaman.
+ */
+function setupScrollSpy() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    if (sections.length === 0 || navLinks.length === 0) return;
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollY = window.pageYOffset;
+
+        sections.forEach(section => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 150; // Offset for fixed nav
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
 }
